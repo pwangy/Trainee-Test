@@ -13,36 +13,23 @@ create a Movie API written as a class using JavaScript that should perform/offer
 add ID and a random rating (1-5) for each obj.
 Math.floor(Math.random() * 5) + 1;
 
-
-
-
 x 2. A method that returns movies from a certain genre.
    by genre
-
-x 4. A method that returns the movies with the subtitle and thumb properties filtered out.
-   returns array w/out subtitle and thumb
-
-x 5. A method that returns the movies sorted by name.
-	sorted alpha by name
-   
-x 8. A method that prints out movies sorted from bottom rated to top rated.
 
 x 10. A method that returns a movie with a certain id (if found).
     get by ID
 
+x 5. A method that returns the movies sorted by name.
+	sorted alpha by name
+
+
+
+
+x 4. A method that returns the movies with the subtitle and thumb properties filtered out.
+   returns array w/out subtitle and thumb
+
+   
+x 8. A method that prints out movies sorted from bottom rated to top rated.
+
+
 x 7. A method that prints out the three top rated movies.
-
-
-item, index
-
-            // const newMovie = new Movie({
-            //     // movieID: index,
-            //     description: item.description,
-            //     sources: item.sources,
-            //     subtitle: item.subtitle,
-            //     thumb: item.thumb,
-            //     title: item.title,
-            //     genre: item.genre,
-            //     // rating: Math.floor(Math.random() * 5) + 1
-            // })
-            // newMovie.save()

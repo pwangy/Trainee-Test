@@ -1,7 +1,6 @@
 import express from 'express'
 import cors from 'cors'
 import mongoose from 'mongoose'
-
 import data from './data/movies.json'
 
 // Connect to database
@@ -21,14 +20,15 @@ const Movie = mongoose.model('Movie', {
     rating: Number
 })
 
-// listens for RESET_DB=true
+// Listens for RESET_DB=true
 if (process.env.RESET_DB) {
     console.log('Resetting database')
+
     const seed = async () => {
-        // clear db before populating
+        // clear DB before populating
         await Movie.deleteMany({})
 
-        // populate db
+        // populate DB and include values for custom fields
         data.forEach( async(i) => {
             const newMovie = new Movie({
                 ...i,
@@ -41,7 +41,7 @@ if (process.env.RESET_DB) {
     seed()
 }
 
-// Define the port the app will run on with default to 8080
+// Define the port the app will run on. Defaults to 8080.
 const port = process.env.PORT || 8080
 const app = express()
 
@@ -49,27 +49,28 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-// Check if DB is ready. If not, return error
+// Check if DB is ready. If not, return error.
 app.use((req, res, next) => {
     if (mongoose.connection.readyState === 1) {
         next()
         } else {
             res.status(503).json({ error: 'Service unavailable' })
         }
-    })
+})
+
 
 // Route definitions
 app.get('/', (req,res) => {
     res.send(`Welcome to Peggy's Movie API!`)
 })
 
-// Get all movies along with ID and random rating
+// Get all movies
 app.get('/movies', async (req, res) => {
     const allMovies = await Movie.find()
     res.json(allMovies)
 })
 
-// Get movie by ID
+// Get movie by movieID
 app.get('/movies/:movieID', async (req, res) => {
     const searchID = await Movie.findOne({ movieID: req.params.movieID })
     if (searchID) {
@@ -79,27 +80,38 @@ app.get('/movies/:movieID', async (req, res) => {
     }
 })
      
-    
-
-
-// Get movies by genre
-
-// Get movies sorted by name
-
-// Get movies sorted by rating (low to high)
-
-// Get movies without subtitle and thumb properties
-
-// Get top 3 rated movies
-
-
-app.get('/movies/add', (req, res) => {
-    res.send('new movie form')
+// Get movies by genre, ignore case of query
+app.get('/movies/genre/:genre', async (req, res) => {
+    const keyword = req.params.genre
+    const keyRegExp = new RegExp('\\b' + keyword + '\\b', 'i')
+    if (keyword) {
+        const genreFound = await Movie.find({ genre: keyRegExp })
+        res.json(genreFound)
+    } else {
+        res.status(400).json({ error: 'Invalid genre'})
+    }
 })
 
+// Get movies sorted by name
+app.get('/title', async (req, res) => {
+    const alphaByTitle = await Movie.find().sort({ title: 1 })
+    res.json(alphaByTitle)
+})
 
-console.log(data.length)
-console.log(data)
+// Get movies sorted by rating (low to high)
+// sort by rating -1 ?
+
+
+// Get movies without subtitle and thumb properties
+// filter?
+
+// Get top 3 rated movies
+// sort by rating, print with limit of 3 entries
+
+
+
+// console.log(data.length)
+// console.log(data)
 
 
 // Start the server
