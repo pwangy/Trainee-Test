@@ -22,14 +22,14 @@ x 10. A method that returns a movie with a certain id (if found).
 x 5. A method that returns the movies sorted by name.
 	sorted alpha by name
 
-
+x 8. A method that prints out movies sorted from bottom rated to top rated.
 
 
 x 4. A method that returns the movies with the subtitle and thumb properties filtered out.
    returns array w/out subtitle and thumb
 
    
-x 8. A method that prints out movies sorted from bottom rated to top rated.
+
 
 
 x 7. A method that prints out the three top rated movies.

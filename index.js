@@ -82,9 +82,9 @@ app.get('/movies/:movieID', async (req, res) => {
      
 // Get movies by genre, ignore case of query
 app.get('/movies/genre/:genre', async (req, res) => {
-    const keyword = req.params.genre
-    const keyRegExp = new RegExp('\\b' + keyword + '\\b', 'i')
-    if (keyword) {
+    const searchGenre = req.params.genre
+    const keyRegExp = new RegExp('\\b' + searchGenre + '\\b', 'i')
+    if (searchGenre) {
         const genreFound = await Movie.find({ genre: keyRegExp })
         res.json(genreFound)
     } else {
@@ -99,14 +99,22 @@ app.get('/title', async (req, res) => {
 })
 
 // Get movies sorted by rating (low to high)
-// sort by rating -1 ?
+app.get('/rating', async (req, res) => {
+    const lowToHigh = await Movie.find().sort({ rating: 1 })
+    res.json(lowToHigh)
+})
+
+// Get top 3 rated movies
+app.get('/top', async (req, res) => {
+    const topRated = await Movie.find().sort({ rating: -1 }).limit(3).exec()
+    res.json(topRated)
+})
 
 
 // Get movies without subtitle and thumb properties
 // filter?
 
-// Get top 3 rated movies
-// sort by rating, print with limit of 3 entries
+
 
 
 
