@@ -3,7 +3,6 @@
 ## Completed Objectives :eyeglasses:
 - Create a Movie API in JavaScript with the first requirement *and* at least 6 more methods from <details><summary> this numbered list.</summary>
   <p>
-  ```
     - [x] (REQUIRED) When instantiating the class with the imported movies.json file, add an “id” and a random “rating” from 1 to 5 for each movie before storing it.
     - [x] 2. A method that returns movies from a certain genre.
     - [] 3. A method that removes a movie with a certain id (if found).
@@ -15,7 +14,6 @@
     - [] 9. A method that allows the user to add a new movie object to the movie list (supply all properties but the “id” and “rating”. The “id” and “rating” properties should be added internally by the method.
     - [x] 10. A method that returns a movie with a certain id (if found).
     - [] 11. A method that changes the title of a movie with a certain id (if found). The updated title should be sent in as an argument to the method.
-```
 </p>
 </details>
 - A JSON file with movie objects is provided and should be used as input when instantiating the Movie API.
