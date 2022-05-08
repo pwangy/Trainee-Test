@@ -106,14 +106,25 @@ app.get('/rating', async (req, res) => {
 
 // Get top 3 rated movies
 app.get('/top', async (req, res) => {
-    const topRated = await Movie.find().sort({ rating: -1 }).limit(3).exec()
+    const topRated = await Movie.find().sort({ rating: -1 }).limit(3)
     res.json(topRated)
 })
 
 
 // Get movies without subtitle and thumb properties
-// filter?
+app.get('/simple', async (req, res) => {
+    const allMovies = await Movie.find()
+    
+    let simpleArr = []
 
+    const simplify = allMovies.map(({ title, description, genre, sources, movieID, rating }) => ({ title, description, genre, sources, movieID, rating }))
+
+    simplify.push(simpleArr)
+    
+    await simpleArr.save()
+
+    res.json(simpleArr)
+})
 
 
 
