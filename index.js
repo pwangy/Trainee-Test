@@ -58,8 +58,8 @@ app.use((req, res, next) => {
         }
 })
 
-
 // Route definitions
+// Root route
 app.get('/', (req,res) => {
     res.send(`Welcome to Peggy's Movie API!`)
 })
@@ -110,28 +110,14 @@ app.get('/top', async (req, res) => {
     res.json(topRated)
 })
 
-
-// Get movies without subtitle and thumb properties
-app.get('/simple', async (req, res) => {
-    const allMovies = await Movie.find()
-    
-    let simpleArr = []
-
-    const simplify = allMovies.map(({ title, description, genre, sources, movieID, rating }) => ({ title, description, genre, sources, movieID, rating }))
-
-    simplify.push(simpleArr)
-    
-    await simpleArr.save()
-
-    res.json(simpleArr)
+// Get the 2 top and 2 bottom ranked movies
+app.get('/top-and-bottom-ranked', async (req, res) => {
+    const rankedResults = [{}]
+    const rankedTop = await (await Movie.find().sort({ rating: 1 }).limit(2))
+    const rankedBottom = await (await Movie.find().sort({ rating: -1 }).limit(2))
+    rankedResults.push(rankedBottom, rankedTop)
+    res.json(rankedResults)
 })
-
-
-
-
-// console.log(data.length)
-// console.log(data)
-
 
 // Start the server
 app.listen(port, () => {
