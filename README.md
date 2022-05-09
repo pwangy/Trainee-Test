@@ -40,11 +40,7 @@ https://movieapi.up.railway.app/
 
 # API Documentation :popcorn: 
 <br/>
-The following endpoints can be accessed using 
-```
-GET
-```
-methods.
+The following endpoints can be accessed using ``` GET ``` methods.
 
 
 - /movies :arrow_forward:	A list of all movies in the database.
