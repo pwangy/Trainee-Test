@@ -1,0 +1,25 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true
+        },
+        "ecmaVersion": 2017,
+        "sourceType": "module"
+    },
+    "globals": {
+        "document": true,
+        "window": true,
+        "process": true
+      },
+    "rules": {
+    }
+}
