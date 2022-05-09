@@ -28,17 +28,13 @@ Testing continuiously throughout writing the code, I wrapped up by doing another
 
 I have to confess that I spent much of my time remembering *how* to go about writing a server file and a RESTful API, but managed to complete the challenge with work that I feel good about.
 
-If I were to continue work on the challenge, I would learn more about how best I can split up my code into directories for the data model and routes. Then I would continue with the remaining endpoints and looking at connecting this project to Heroku so cloning the repo wouldn't be necessary to use the endpoints. 
+If I were to continue work on the challenge, I would learn more about how best I can split up my code into directories for the data model and routes. Then I would continue with the remaining endpoints. 
 
 Thanks very much for reviewing my work, and of course, I welcome any constructive feedback on how I can make this code better. :)
 
 
-## :point_right:	Getting this project up and running locally
-1. Clone this repo
-2. ``` $ cd ``` into the directory for this project
-3. ``` $ npm install```
-4. ``` $ npm start ```
-5. In your browser, go to http://localhost:8080/
+## :point_right:	View it live
+https://movieapi.up.railway.app/
 
 <hr>
 
@@ -51,11 +47,11 @@ The following endpoints can be accessed using ```GET``` methods.
 
 - /movies/:movieID :arrow_forward: Returns data for a specific movie.
    
-   example: http://localhost:8080/movies/1652034777141
+   example: https://movieapi.up.railway.app/movies/1652102893209
    
 - /movies/genre/:genre :arrow_forward:	A list of all movies with a specific genre (not case sensitive)
    
-   example: http://localhost:8080/movies/genre/adventure
+   example: https://movieapi.up.railway.app/movies/genre/adventure
    
    Possible genres to search: 
    

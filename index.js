@@ -61,7 +61,7 @@ app.use((req, res, next) => {
 // Route definitions
 // Root route
 app.get('/', (req,res) => {
-    res.send(`Welcome to Peggy's Movie API!`)
+    res.send(`Welcome to Peggy's Movie API! Documentation for this web service lives here: https://github.com/pwangy/Trainee-Test/blob/main/README.md`)
 })
 
 // Get all movies
