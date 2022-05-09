@@ -30,9 +30,39 @@ When you are done, upload your files to a github repo and send that link to us i
 
 
 ## :point_right:	Getting this project up and running locally
-- clone this repo
-- npm install
-- npm start
+1. Clone this repo
+2. ``` $ cd ``` into the directory for this project
+3. ``` $ npm install```
+4. ``` $ npm start ```
+5. In your browser, go to http://localhost:8080/
 
-## :popcorn: Endpoints
-- 
+
+# :popcorn: API Documentation
+## Endpoints
+All of the following are ```GET``` methods.
+- /movies 
+   A list of all movies in the database.
+   http://localhost:8080/movies/
+- /movies/:movieID
+   Returns data for a specific movie.
+   example: http://localhost:8080/movies/1652034777141
+- /movies/genre/:genre
+   A list of all movies with a specific genre (not case sensitive)
+   example: http://localhost:8080/movies/genre/adventure
+   Possible genres to search: 
+      - Action
+      - Adventure
+      - Animated
+      - Comedy
+      - Drama
+      - Horror
+      - Romance
+      - Sci-fi
+- /title
+   Lists all movies sorted alphabetically by Title
+- /rating
+   Lists all movies sorted low to high based on Ranking
+- /top
+   Lists the top 3 rated movies
+- /top-and-bottom-ranked
+   Lists the top 2 and bottom 2 ranked movies
