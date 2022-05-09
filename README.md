@@ -20,7 +20,7 @@
 
 Being focused on frontend devellopment, this challenge was a good refresher on setting up backend files! 
 
-My general approach was to first get up and running just enough so that I view the database in MongoDB Compass. This meant defining the port, adding middleware, something to start the server, the connection to Mongoose and MongoDB, defining the data model and making sure to clear the database before seeding it to avoid duplication. WHEW!
+My general approach was to first get up and running just enough so that I could view the database in MongoDB Compass. This meant defining the port, adding middleware, something to start the server, the connection to Mongoose and MongoDB, defining the data model and making sure to clear the database before seeding it to avoid duplication. WHEW!
 
 Once that got going I started tackle creating the endpoints. First deciding to simply use a Date.now() value as the movieID and then adding the random math function to generate ratings for all the titles when seeding the database. I continued to work this way down the line to complete all endpoints.
 
