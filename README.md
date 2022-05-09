@@ -36,33 +36,34 @@ When you are done, upload your files to a github repo and send that link to us i
 4. ``` $ npm start ```
 5. In your browser, go to http://localhost:8080/
 
+<hr>
 
-# :popcorn: API Documentation
-## Endpoints
-All of the following are ```GET``` methods.
-- /movies 
-   A list of all movies in the database.
-   http://localhost:8080/movies/
-- /movies/:movieID
-   Returns data for a specific movie.
+# API Documentation :popcorn: 
+<br/>
+The following endpoints can be accessed using ```GET``` methods.
+
+
+- /movies :arrow_forward:	A list of all movies in the database.
+
+- /movies/:movieID :arrow_forward: Returns data for a specific movie.
+   
    example: http://localhost:8080/movies/1652034777141
-- /movies/genre/:genre
-   A list of all movies with a specific genre (not case sensitive)
+   
+- /movies/genre/:genre :arrow_forward:	A list of all movies with a specific genre (not case sensitive)
+   
    example: http://localhost:8080/movies/genre/adventure
+   
    Possible genres to search: 
-      - Action
-      - Adventure
-      - Animated
-      - Comedy
-      - Drama
-      - Horror
-      - Romance
-      - Sci-fi
-- /title
-   Lists all movies sorted alphabetically by Title
-- /rating
-   Lists all movies sorted low to high based on Ranking
-- /top
-   Lists the top 3 rated movies
-- /top-and-bottom-ranked
-   Lists the top 2 and bottom 2 ranked movies
+   
+        action
+        adventure
+        animated
+        comedy
+        drama
+        horror
+        romance
+        sci-fi
+- /title :arrow_forward:	Lists all movies sorted alphabetically by Title
+- /rating :arrow_forward:	Lists all movies sorted low to high based on Ranking
+- /top :arrow_forward: Lists the top 3 rated movies
+- /top-and-bottom-ranked :arrow_forward: Lists the top 2 and bottom 2 ranked movies
