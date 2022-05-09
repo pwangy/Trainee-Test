@@ -18,15 +18,19 @@
 
 ##	Approach :movie_camera:
 
-We are interested in the quality of the implementation rather than the number of features. We value originality and creativity. The application and the code should be of such quality so that it can be read and maintained by other developers.
+Being focused on frontend devellopment, this challenge was a good refresher on setting up backend files! 
 
+My general approach was to first get up and running just enough so that I view the database in MongoDB Compass. This meant defining the port, adding middleware, something to start the server, the connection to Mongoose and MongoDB, defining the data model and making sure to clear the database before seeding it to avoid duplication. WHEW!
 
-Your task is to create a Movie API written as a class using JavaScript that should perform/offer a certain set of methods (listed below). You are to put around **1 hour** on this project. How you solve it is eventually up to you. We will look at everything from readable code, documentation, minimal code duplication, error handling, etc.
+Once that got going I started tackle creating the endpoints. First deciding to simply use a Date.now() value as the movieID and then adding the random math function to generate ratings for all the titles when seeding the database. I continued to work this way down the line to complete all endpoints.
 
+Testing continuiously throughout writing the code, I wrapped up by doing another round of code cleanup and removing extra line spaces or commented out console.log commands,  and now, finally writting up this ReadMe document.
 
-You will receive a JSON file containing movie objects, which should be used as input when instantiating the Movie API. Write your code inside the index.js file.
+I have to confess that I spent much of my time remembering *how* to go about writing a server file and a RESTful API, but managed to complete the challenge with work that I feel good about.
 
-When you are done, upload your files to a github repo and send that link to us in an email. Please also write down the amount of time you've spent on this.
+If I were to continue work on the challenge, I would learn more about how best I can split up my code into directories for the data model and routes. Then I would continue with the remaining endpoints and looking at connecting this project to Heroku so cloning the repo wouldn't be necessary to use the endpoints. 
+
+Thanks very much for reviewing my work, and of course, I welcome any constructive feedback on how I can make this code better. :)
 
 
 ## :point_right:	Getting this project up and running locally
